@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author IT云清
  */
-@FeignClient(value = "order-server")
+@FeignClient(value = "seata-order-server")
 public interface OrderApi {
 
     /**

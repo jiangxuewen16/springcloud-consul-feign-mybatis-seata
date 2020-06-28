@@ -58,6 +58,9 @@ public class OrderServiceImpl implements OrderService{
      */
     @Override
     public void update(Long userId,BigDecimal money,Integer status) {
+        if (true) {
+            throw new RuntimeException("xxxxxx");
+        }
         LOGGER.info("修改订单状态，入参为：userId={},money={},status={}",userId,money,status);
         orderDao.update(userId,money,status);
     }

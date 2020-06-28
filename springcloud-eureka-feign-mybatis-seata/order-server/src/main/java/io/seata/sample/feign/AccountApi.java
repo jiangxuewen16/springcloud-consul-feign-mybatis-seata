@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author IT云清
  */
-@FeignClient(value = "account-server")
+@FeignClient(value = "seata-account-server")
 public interface AccountApi {
 
     /**

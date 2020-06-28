@@ -16,13 +16,26 @@ server:
     port: 8182
 spring:
     application:
-        name: storage-server
+        name: seata-storage-server
     cloud:
         alibaba:
             seata:
                 tx-service-group: my_test_tx_group
+        consul:
+            port: 8500
+            host: 192.168.18.245
+            discovery:
+                register: true
+                serviceName: ${spring.application.name}
+                tags: version=1.0,author=jxw
+                healthCheckPath: /actuator/health
+                healthCheckInterval: 10s
+                healthCheckCriticalTimeout: 30s
+                instanceId: ${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}
+                prefer-ip-address: true
+
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        password: 14789632
-        url: jdbc:mysql://116.62.62.26/seat-storage
+        password: root
+        url: jdbc:mysql://192.168.18.245/test_seata_tx_3
         username: root

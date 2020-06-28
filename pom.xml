@@ -80,6 +80,7 @@
         <module>spring-cloud-alibaba-samples</module>
         <module>seata-spring-boot-starter-samples</module>
         <module>seata-xa</module>
+        <module>springcloud-eureka-feign-mybatis-seata</module>
     </modules>
 
     <dependencies>
